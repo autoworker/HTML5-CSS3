@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	.div1{width:200px;height:200px; background:green;}
+	.div1 div{width:20px; height:20px; background:pink;}
+</style>
+<script>
+	document.addEventListener('DOMContentLoad',function(){
+		var oInp=document.querySelectorAll('div1 input');
+		oInp.style.background='red';	
+	},false);
+</script>
+</head>
+<body>
+	<div class="div1">
+		<div></div>
+	</div>
+</body>
+</html>

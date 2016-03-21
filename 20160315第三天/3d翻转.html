@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;}
+	div{width:200px; height:300px;position:absolute;left:50%;top:50%; margin-left:-100px; margin-top:-150px;border:1px solid #000; -webkit-transform-style:preserve-3d; font-size:40px; line-height: 300px; text-align: center;	-webkit-transition:1s all ease;}
+	div span{width:100%;height:100%;position:absolute;left:0;top:0;}
+	div .l1{background:red;-webkit-transform:translateZ(1px);}
+	div .l2{background:green;-webkit-transform:translateZ(-1px) scale(-1,1);}
+	div:active{-webkit-transform:perspective(800px) rotateY(180deg);}
+</style>
+</head>
+<body>
+	<div>
+		<span class="l1">face</span>
+		<span class="l2">back</span>
+	</div>
+</body>
+</html>

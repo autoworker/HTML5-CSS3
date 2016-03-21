@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var oBtn=document.querySelector('input');
+		oBtn.dataset.a='12';
+		alert(oBtn.dataset.index);
+		for(var i in oBtn.dataset){
+			alert(i+'='+oBtn.dataset[i]);
+		}
+	},false);
+</script>
+</head>
+<body>
+	<input type="button" value="按钮" data-index="index" data-b="b">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0; list-style:none;}
+	@keyframes text{
+		to{left:-42px;}
+	}
+	div{width:100px;height:300px;border:1px solid #000;position:absolute;left:50%;top:50%;margin-left:-50px; margin-top:-150px;overflow:hidden;}
+	div span{width:400px;height:300px;position:absolute;left:0;top:0;display: inline-block; background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#fff 10px,#fff 20px,#000 20px,#000 30px);-webkit-animation:text .2s linear infinite ;}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var oC1=document.getElementById('color1');
+		var oC2=document.getElementById('color2');
+		var oC3=document.getElementById('color3');
+		var oSpan=document.querySelector('span');
+		oC1.onchange=function(){
+			style();
+		};
+		oC2.onchange=function(){
+			style();
+		};
+		oC3.onchange=function(){
+			style();
+		};
+		function style(){
+			oSpan.style.background='-webkit-repeating-linear-gradient(-45deg,'+oC1.value+' 0px,'+oC1.value+' 10px,'+oC2.value+' 10px,'+oC2.value+' 20px,'+oC3.value+' 20px,'+oC3.value+' 30px)';
+		}
+	},false);
+</script>
+</head>
+<body>
+	color1:<input type="color" id="color1" value="#000000">
+	color2:<input type="color" id="color2" value="#ffffff">
+	color3:<input type="color" id="color3" value="#f0f0f0">
+	<div>
+		<span></span>
+	</div>
+</body>
+</html>

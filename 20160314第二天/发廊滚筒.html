@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;}
+	@keyframes text{
+		form{left:0;}
+		to{left:-114px;}
+	}
+	.box{width:100px; height:300px; border:1px solid #000;margin:20px auto;position: relative;left:0;top:0;overflow: hidden;}
+	.box .bar{width:400px; height:300px;background:-webkit-repeating-linear-gradient(-45deg,red 0,red 20px,#000 20px,#000 40px,#fff 40px,#fff 60px,#000  60px,#000  80px);position:absolute;left:0;top:0;animation:text .4s linear infinite ;}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="bar"></div>
+	</div>
+</body>
+</html>

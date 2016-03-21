@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0; list-style: none;}
+	ul{width:200px;height:200px;position:absolute;left:50%;top:50%;margin-left:-100px;margin-top:-100px;-webkit-transition:1s all ease; -webkit-transform-style:preserve-3d;-webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg);}
+	li{width:100%;height:100%;position: absolute;left:0;top:0; text-align: center; line-height: 200px;font-size:40px; color:#fff; font-weight:bold;}
+	.face{background:red;-webkit-transform:translateZ(100px);}
+	.back{background:blue;-webkit-transform:translateZ(-100px);}
+	.up{background:pink; -webkit-transform: translateY(-100px) rotateX(-90deg);}
+	.down{background:#f09;-webkit-transform:translateY(100px) rotateX(-90deg);}
+	.left{background:#f90;-webkit-transform:translateX(-100px) rotateY(-90deg);}
+	.right{background:#f89;-webkit-transform:translateX(100px) rotateY(90deg);}
+	ul:hover{-webkit-transform:perspective(800px) rotateX(45deg) rotateY(90deg);}
+</style>
+</head>
+<body>
+	<ul>
+		<li class="face">1</li>
+		<li class="back">2</li>
+		<li class="up">3</li>
+		<li class="down">4</li>
+		<li class="left">5</li>
+		<li class="right">6</li>
+	</ul>
+</body>
+</html>

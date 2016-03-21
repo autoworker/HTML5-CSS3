@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;}
+	body,html{overflow: hidden;}
+	div{width:200px;height:200px;background:#ccc;border:1px solid #000;position:absolute;left:50%;top:50%;margin-left:-100px;margin-top:-100px;-webkit-transform:scale(5,4);display: none;opacity: 0;}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var oBtn=document.querySelector('input');
+		var oDiv=document.querySelector('div');
+		var oA=document.querySelector('a');
+		oBtn.onclick=function(){
+			oDiv.style.WebkitTransition='2s all ease';
+			oDiv.style.display='block';
+			setTimeout(function(){
+				oDiv.style.webkitTransform='scale(1,1)';
+				oDiv.style.opacity=1;
+			},0)
+		};
+		oA.onclick=function(){
+			oDiv.style.WebkitTransition='2s all ease';
+			oDiv.style.opacity=0;
+			oDiv.style.webkitTransform='scale(5,4)';
+			oDiv.addEventListener('transitionend',fn,false);
+			function fn(){
+				oDiv.style.display='none';
+				oDiv.remeoveEventListener('transitionend',fn,false);
+			}
+		};
+	},false)
+</script>
+</head>
+<body>
+	<input type="button" value="登录">
+	<div>
+		<a href="javascript:;">X</a>
+	</div>
+</body>
+</html>

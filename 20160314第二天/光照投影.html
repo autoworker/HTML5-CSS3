@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;}
+	body{overflow: hidden;}
+	p{width:300px;height:40px; text-align:center; line-height:40px;font-size:40px;position:absolute;left:50%;top:50%; margin-left:-150px;margin-top:-20px; font-family:微软雅黑;text-shadow:0 0 0 #000;}
+	span{width:150px;height:150px; background:#f90; border-radius:50%;position:absolute;left:0;top:0; z-index: 2;box-shadow:0 0 100px yellow;}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var oS=document.querySelector('span');
+		var oP=document.querySelector('p');
+		document.addEventListener('mousemove',function(ev){
+			var oEvent=ev||event;
+			oS.style.left=oEvent.clientX-oS.offsetWidth/2+'px';
+			oS.style.top=oEvent.clientY-oS.offsetHeight/2+'px';
+			var disX=(oP.offsetLeft+oP.offsetWidth/2)-(oS.offsetLeft+oS.offsetWidth/2);
+			var disY=(oP.offsetTop+oP.offsetHeight/2)-(oS.offsetTop+oS.offsetHeight/2);
+			var c=Math.sqrt(disX*disX+disY*disY);
+			oP.style.textShadow=disX/2+'px '+disY/2+'px '+c/20+'px #000';
+		},false);
+	},false);
+</script>
+</head>
+<body>
+	<p>我就是我我就是我我就是我我就是我我就是我我就是我我就是我</p>	
+	<span></span>
+</body>
+</html>

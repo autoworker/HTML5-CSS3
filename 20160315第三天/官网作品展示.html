@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;list-style:none;}
+	ul{width:300px;height:200px;position:absolute;left:50%;top:50%;margin-left:-150px; margin-top:-100px; perspective:1000px; }
+	ul li{width:100%;height:100%; border:1px solid #000; position:absolute;left:0;top:0;font-size:40px; line-height:200px; font-weight:bold;text-align:center;color:#fff; background:#f93;opacity:0; -webkit-transition:1s all ease;}
+	ul .l2{opacity: 0;-webkit-transform:rotateY(60deg) translateX(-300px);z-index: 1;}
+	ul .l1{opacity: .8;-webkit-transform:rotateY(50deg) translateX(-200px);z-index: 3;}
+	ul .cur{opacity: 1;z-index: 5;}
+	ul .r1{opacity: .8;-webkit-transform:rotateY(-50deg) translateX(200px);z-index: 3;}
+	ul .r2{opacity: 0;-webkit-transform:rotateY(-60deg) translateX(300px);z-index: 1;}
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded',function(){
+		var oP=document.getElementById('prev');
+		var oN=document.getElementById('next');
+		var aLi=document.querySelectorAll('ul li');
+		var aClass=[];
+		for (var i = 0; i < aLi.length; i++) {
+			aClass.push(aLi[i].className);
+		}
+
+		oN.onclick=function(){
+			aClass.unshift(aClass.pop());
+			for (var i = 0; i < aClass.length; i++) {
+				aLi[i].className=aClass[i];
+			}
+		};
+		oP.onclick=function(){
+			aClass.push(aClass.shift());
+			for (var i = 0; i < aClass.length; i++) {
+				aLi[i].className=aClass[i];
+			}
+		};
+	},false);
+</script>
+</head>
+<body>
+	<a href="javascript:;" id="prev">←</a>
+	<a href="javascript:;" id="next">→</a>
+	<ul>
+		<li class="cur">1</li>
+		<li class="r1">2</li>
+		<li class="r2">3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li class="l2">11</li>
+		<li class="l1">12</li>
+	</ul>
+</body>
+</html>
